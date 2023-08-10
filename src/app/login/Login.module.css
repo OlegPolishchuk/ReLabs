@@ -1,0 +1,8 @@
+.wrapper {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #2D3A4B;
+}
