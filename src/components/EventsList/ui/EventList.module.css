@@ -1,0 +1,42 @@
+.container {
+  /*border: 1px solid #dee2e6;*/
+  font-size: 0.875rem;
+
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.header {
+  border: 1px solid #dee2e6;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+.body .row:nth-child(odd) {
+  background-color: #f8f9fa;
+
+}
+
+
+.col {
+  display: flex;
+  align-items: center;
+
+  padding: 0.4375rem 0.625rem;
+}
+
+.body .col {
+  min-height: 45px;
+}
+
+.empty {
+  padding: 20px;
+
+  text-align: center;
+}

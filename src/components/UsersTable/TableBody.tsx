@@ -3,6 +3,7 @@ import React from 'react';
 import {Button} from "@mantine/core";
 
 import {FetchUsersResponse, User} from "@/components/UsersList/types/types";
+import {formatDate} from "@/shared/utils";
 
 interface Props {
   items: User[]
@@ -22,7 +23,7 @@ export const TableBody = ({items, setItems}: Props) => {
       <td>{id}</td>
       <td>{name}</td>
       <td>{role}</td>
-      <td>{ctime}</td>
+      <td>{formatDate(ctime)}</td>
       <td>
         <Button
           color={'red'}
