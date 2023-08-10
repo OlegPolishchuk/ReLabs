@@ -1,2 +1,2 @@
 export * from './routes';
-export * from './LoginFormParams';
+export * from 'src/shared/constants/loginForm';

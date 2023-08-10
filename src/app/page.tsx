@@ -1,22 +1,20 @@
-import styles from './page.module.css'
-import {getServerSession} from "next-auth";
-import {authConfig} from "@/configs";
-import Link from "next/link";
-import {Routes} from "@/shared/constants";
+import clsx from "clsx";
+
+import cls from './page.module.css'
+
+import {Header} from "@/components/Header/Header";
+import {UsersList} from "@/components/UsersList/ui/UsersList";
+import {fetchUsers} from "@/components/UsersList/utils/fetchUsers";
 
 export default async function Home() {
-  const session = await getServerSession(authConfig);
-  console.log('session =>', session)
-
+  const usersData = await fetchUsers(0);
+  
   return (
     <>
-      <header>
-        <Link href={Routes.main}>Главная</Link>
-        <Link href={Routes.login}>Авторизация</Link>
-        <Link href={Routes.shop}>Авторизация</Link>
-      </header>
-      <main className={styles.main}>
-        main page
+      <Header />
+
+      <main className={clsx(cls.main)}>
+        <UsersList  usersData={usersData}/>
       </main>
     </>
   )

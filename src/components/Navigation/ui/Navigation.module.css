@@ -1,0 +1,33 @@
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.link {
+  padding: 18px;
+  border-bottom: 3px solid transparent;
+  color: #5a616e;
+
+  transition: all .2s ease;
+}
+
+.link:hover {
+  border-color: #92e3fc;
+  color: #333;
+}
+
+.active {
+  border-color: #3a93e0;
+  color: #333;
+}
+
+.logout {
+  margin-left: auto;
+}
+
+@media (max-width: 576px) {
+  .link {
+    padding: 18px 6px;
+  }
+}

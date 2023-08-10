@@ -1,5 +1,6 @@
 import {AuthOptions} from 'next-auth';
 import CredentialsProvider from "next-auth/providers/credentials";
+ 
 import {LoginInputs} from "@/components/LoginForm/types/types";
 
 
@@ -9,8 +10,8 @@ export const authConfig: AuthOptions = {
      id: 'credentials',
      credentials: {},
      async authorize(credentials) {
-       const {email, token } = credentials as LoginInputs & {token: string};
-       const user = { id: token, email }
+       const {email, csrfToken } = credentials as LoginInputs & {csrfToken: string};
+       const user = { id: csrfToken, email }
 
        if (user.id) {
          return user
