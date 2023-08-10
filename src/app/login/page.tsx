@@ -1,13 +1,15 @@
 import React from 'react';
-import {LoginForm} from "@/components/LoginForm/ui/LoginForm";
+
 import cls from './Login.module.css';
 
-const Page = () => {
+import { LoginForm } from '@/components/LoginForm';
+
+const Login = () => {
   return (
     <div className={cls.wrapper}>
-        <LoginForm />
+      <LoginForm />
     </div>
   );
 };
 
-export default Page;
+export default Login;
