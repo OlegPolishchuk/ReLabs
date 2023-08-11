@@ -6,7 +6,8 @@ import createCache from '@emotion/cache';
 import { CacheProvider } from '@emotion/react';
 import { MantineProvider } from '@mantine/core';
 import { useServerInsertedHTML } from 'next/navigation';
-import {AuthProvider} from "./AuthProvider";
+
+import { AuthProvider } from './AuthProvider';
 
 interface Props {
   children: ReactNode;

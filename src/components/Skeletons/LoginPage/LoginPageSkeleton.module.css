@@ -1,0 +1,17 @@
+.skeleton {
+  height: 250px;
+  width: 90%;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.hint {
+  align-self: flex-start;
+}

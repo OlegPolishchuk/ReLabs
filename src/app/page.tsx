@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-
 import cls from './page.module.css';
 
 import { EventList } from '@/components/EventsList';
@@ -10,7 +8,7 @@ export default async function Home() {
   const usersData = await fetchUsers(0);
 
   return (
-    <main className={clsx(cls.main)}>
+    <main className={cls.main}>
       <UsersList usersData={usersData} />
       <EventList />
     </main>
