@@ -2,10 +2,11 @@
 
 import React from 'react';
 
-import {Pagination} from "@mantine/core";
+import { Pagination as MantinePagination } from '@mantine/core';
 
-import {FetchUsersResponse} from "@/components/UsersList/types/types";
-import {fetchUsers} from "@/components/UsersList/utils/fetchUsers";
+import { FetchUsersResponse } from '@/components/UsersList/types/types';
+import { fetchUsers } from '@/components/UsersList/utils/fetchUsers';
+import { Pagination } from '@/shared/constants/pagination';
 
 interface Props {
   total: number;
@@ -13,14 +14,15 @@ interface Props {
   setData: React.Dispatch<React.SetStateAction<FetchUsersResponse>>;
 }
 
-export const UsersPagination = ({total, className, setData}: Props) => {
+export const UsersPagination = ({ total, className, setData }: Props) => {
   const handleChangePage = async (value: number) => {
-    const usersData = await fetchUsers(value)
-    setData(usersData)
-  }
-  
+    const offset = (value - 1) * Pagination.limit;
+
+    const usersData = await fetchUsers(offset);
+    setData(usersData);
+  };
+
   return (
-    <Pagination total={total} className={className} onChange={handleChangePage} />
+    <MantinePagination total={total} className={className} onChange={handleChangePage} />
   );
 };
-

@@ -27,12 +27,14 @@ interface Props extends ComponentPropsWithRef<'input'> {
 
 export const PasswordInput = ({ errors, register, disabled }: Props) => {
   const { password } = LoginFormValidateParams;
-  const passwordError =
-    errors.password &&
-    (errors.password.type === 'required' ? password.error.min : password.error.pattern);
 
   return (
-    <Input.Wrapper className={cls.label} label="Пароль" required error={passwordError}>
+    <Input.Wrapper
+      className={cls.label}
+      label="Пароль"
+      required
+      error={errors.password?.message}
+    >
       <Input
         className={cls.input}
         type={'password'}

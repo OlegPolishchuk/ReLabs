@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Title } from '@mantine/core';
 import { signIn } from 'next-auth/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+import { schema } from '../schema/validationSchema';
 import { LoginInputs } from '../types/types';
 
 import { LoginInput } from './LoginInput';
@@ -22,7 +24,7 @@ export const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginInputs>({ mode: 'onSubmit' });
+  } = useForm<LoginInputs>({ resolver: yupResolver(schema) });
 
   const onSubmit: SubmitHandler<LoginInputs> = async data => {
     setLoading(true);
